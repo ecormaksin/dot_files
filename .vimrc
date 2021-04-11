@@ -1,57 +1,47 @@
-" setting
-"文字コードをUFT-8に設定
-set fenc=utf-8
-" バックアップファイルを作らない
-set nobackup
-" スワップファイルを作らない
-set noswapfile
-" 編集中のファイルが変更されたら自動で読み直す
-set autoread
-" バッファが編集中でもその他のファイルを開けるように
-set hidden
-" 入力中のコマンドをステータスに表示する
-set showcmd
-"バックスペースキーで行頭を削除する
-set backspace=indent,eol,start
-" クリップボードを使用する
-set clipboard=unnamedplus
 
-" 見た目系
-" 行番号を表示
-set number
-" 現在の行を強調表示
-set cursorline
-" 行末の1文字先までカーソルを移動できるように
-set virtualedit=onemore
-" インデントはスマートインデント
-set smartindent
-" ビープ音を可視化
-set visualbell
-" 括弧入力時の対応する括弧を表示
-set showmatch
-" ステータスラインを常に表示
-set laststatus=2
-" コマンドラインの補完
-set wildmode=list:longest
-
-" Tab系
-" 不可視文字を可視化(タブが「▸-」と表示される)
-" set list listchars=tab:▸-
-" Tab文字を半角スペースにする
-set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
-" 行頭でのTab文字の表示幅
-set shiftwidth=2
-
-" 検索系
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+" customize
+" vim の独自拡張機能を使う(viとの互換性をとらない)
+set nocompatible
+" 文字コードを指定する
+set encoding=utf-8
+" ファイルエンコードを指定する
+set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
+" 自動認識させる改行コードを指定する
+set fileformats=unix,dos,mac
+" バックアップをとる
+" 逆は [ set nobackup ]
+" set backup
+" バックアップを作るディレクトリを指定する
+" set backupdir=~/backup
+" 検索履歴を50個残す
+set history=50
+" 検索時に大文字小文字を区別しない
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
+" 検索語に大文字を混ぜると検索時に大文字を区別する
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
-set incsearch
-" 検索時に最後まで行ったら最初に戻る
-set wrapscan
-" 検索語をハイライト表示
+" 検索語にマッチした単語をハイライトする
+" 逆は [ set nohlsearch ]
 set hlsearch
+" インクリメンタルサーチを使う ( 検索語を入れている途中から随時マッチする文字列の検索を開始)
+" 逆は [ set noincsearch ]
+set incsearch
+" 行番号を表示する
+" 逆は [ set nonumber ]
+set number
+" 改行 ( $ ) やタブ ( ^I ) を可視化する
+set list
+" 括弧入力時に対応する括弧を強調する
+set showmatch
+" ファイルの末尾に改行を入れない
+set binary noeol
+" 自動インデントを有効にする
+" 逆は [ noautoindent ]
+set autoindent
+" 構文ごとに色分け表示する
+" 逆は [ syntax off ]
+syntax on
+" [ syntax on ] の場合のコメント文の色を変更する
+highlight Comment ctermfg=LightCyan
+" ウィンドウ幅で行を折り返す
+" 逆は [ set nowrap ]
+set wrap
